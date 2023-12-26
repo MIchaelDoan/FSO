@@ -1,43 +1,7 @@
 
+import Course from '../components/Course'
 
-const Header = (props) => {
-  return <h1>{props.course.name}</h1>;
-};
 
-const Part = ({marts}) => {
-  var value = marts.map(mart => <p>{mart.name} {mart.exercises}</p>)
-  
-  return (
-    <div>{value}</div>
-    
-  );
-};
-
-const Content = ({farts}) => {
-  return (
-    <div>
-      <Part marts = {farts}></Part>
-    </div>
-  );
-};
-
-const Total = ({parts}) => {
-  var total = parts.reduce((sum, part) => sum += part.exercises ,0)
-
-  return (
-    <p>
-      Course Total: {total}
-    </p>
-  );
-};
-
-const Course = ({course}) =>{
-  return <div><Header course = {course}></Header>
-    <Content farts={course.parts} />
-    <Total parts={course.parts} />
- </div>
-
-}
 
 const App = () => {
   const course = {
